@@ -1,0 +1,122 @@
+
+@keyframes done {
+    70% {
+        transform: scale(1.2)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+#title {
+    font-size: 3rem;
+    margin: 2rem 0
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px
+}
+
+#numbers {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 30px;
+    border: 3px solid black;
+    border-radius: 20px
+}
+
+#numbers .ball {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    line-height: 80px;
+    font-size: 48px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#numbers .ball.blue {
+    background: #69c8f2
+}
+
+#numbers .ball.red {
+    background:#ff7272
+}
+#numbers .ball.yellow {
+    background:#ffcb6b
+}
+#numbers .ball.purple {
+    background:#fad8f2
+}
+
+#numbers .ball.gray {
+    background:#aaa
+}
+
+#numbers .ball.green {
+    background: #a5ea89
+}
+
+#numbers .ball.done {
+    animation: done .3s linear
+}
+
+#btn {
+    position: relative;
+    display: block;
+    padding: 1rem 2.5rem 1.6rem;
+    background: #fff;
+    color: #666;
+    border: 2px solid #666;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .5s;
+    user-select: none
+}
+
+#btn:hover {
+    padding: 1rem 2.5rem 1rem;
+    margin-top: .6rem;
+    background: #999;
+    color: #fff
+}
+
+#btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    height: .6rem;
+    width: 100%;
+    background-color: #999999;
+    border-top: 1px solid #666;
+    transition: .5s
+}
+
+#btn:hover::after {
+    transform: translateY(.6rem)
+}
+
+#btn.hide {
+    transform: scale(0)
+}
+
+@media screen and (max-width: 800px) {
+    #numbers {
+        flex-direction: column;
+        align-items: center
+    }
+
+    #numbers .ball {
+        margin-right: 0;
+        margin-bottom: 10px
+    }
+
+    #numbers .ball:last-child {
+        margin-bottom: 0
+    }
+}
